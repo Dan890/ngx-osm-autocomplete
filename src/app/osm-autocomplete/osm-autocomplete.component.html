@@ -1,0 +1,16 @@
+<input
+  type="text"
+  class="form-control"
+  placeholder="Search location"
+  [(ngModel)]="query"
+  (input)="onSearch()"
+/>
+<ul *ngIf="results.length > 0" class="autocomplete-results">
+  <div
+    *ngFor="let result of results"
+    class="osm-autocomplete__result-item"
+    (click)="selectResult(result)"
+  >
+    {{ result.formattedAddress }}
+  </div>
+</ul>
